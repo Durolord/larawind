@@ -25,13 +25,9 @@
     <script src="{{asset('js/charts-bars.js')}}" defer></script>
 
     @livewireStyles
-    <script>
-        import Turbolinks from 'turbolinks';
-        Turbolinks.start()
-    </script>
 
     <!-- Scripts -->
-    {{-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.js" defer></script> --}}
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -40,7 +36,7 @@
         @include('layouts.mobile-menu')
 
         <div class="flex flex-col flex-1 w-full">
-            @include('layouts.navigation-dropdown')
+            @include('layouts.navigation-menu')
             <main class="h-full overflow-y-auto">
                 {{ $slot }}
             </main>
