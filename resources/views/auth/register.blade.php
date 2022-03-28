@@ -31,24 +31,16 @@
 
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-                            <label class="block text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Name</span>
-                                <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                            </label>
-                            <label class="block mt-4 text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Email</span>
-                                <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="Jane Doe" type="email" name="email" :value="old('email')" required />
-                            </label>
-                            <label class="block mt-4 text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Password</span>
-                                <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="***************" type="password" name="password" required autocomplete="new-password" />
-                            </label>
-                            <label class="block mt-4 text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">
-                                    Confirm password
-                                </span>
-                                <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="***************" type="password" name="password_confirmation" required autocomplete="new-password" />
-                            </label>
+                            <x-input label="Name" placeholder="Your Name" wire:model="name" required autofocus/>
+                            <div class="mt-4">
+                                <x-input class="" type="email" label="Email" placeholder="your email" name="email" suffix="@mail.com" />
+                            </div>
+                            <div class="mt-4">
+                                <x-input class="" type="password" label="Password" placeholder="***************" name="password" required autocomplete="new-password" />
+                            </div>
+                            <div class="mt-4">
+                                <x-input class="" type="password" label="Confirm Password" placeholder="***************" name="password_confirmation" required autocomplete="new-password" />
+                            </div>
 
                             <!-- You should use a button here, as the anchor is only used for the example  -->
                             <button class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" type="submit">
