@@ -5,6 +5,9 @@ import focus from '@alpinejs/focus'
 
 window.Alpine = Alpine;
 
+import './../../vendor/power-components/livewire-powergrid/dist/powergrid'
+
+
 Alpine.start();
  
 Alpine.plugin(focus);

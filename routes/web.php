@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::view('roles', 'roles')->name('roles.index');
+    // Route::get('/roles/create', Livewire\CreateRoles::class)->name('roles.create');
     Route::view('forms', 'forms')->name('forms');
     Route::view('cards', 'cards')->name('cards');
     Route::view('charts', 'charts')->name('charts');
