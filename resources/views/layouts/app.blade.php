@@ -26,11 +26,9 @@
     <script src="{{asset('js/charts-bars.js')}}" defer></script>
 
     @livewireStyles
-    @powerGridStyles
 
     <!-- Scripts -->
     @wireUiScripts
-    @powerGridScripts
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -39,7 +37,7 @@
     } else {
         document.documentElement.classList.remove('dark')
     }
-</script>
+    </script>
 </head>
 
 <body>

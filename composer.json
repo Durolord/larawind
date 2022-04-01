@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "filament/tables": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.2",
         "laravel/jetstream": "^2.6",
@@ -13,7 +14,6 @@
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.5",
         "maatwebsite/excel": "^3.1",
-        "power-components/livewire-powergrid": "^2.4",
         "psr/simple-cache": "1.0",
         "spatie/laravel-permission": "^5.5",
         "vildanbina/livewire-wizard": "^1.1",

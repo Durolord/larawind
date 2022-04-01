@@ -13,46 +13,18 @@
                 <span class="ml-4">{{ __('Dashboard') }}</span>
             </a>
         </li>
-        <!-- Roles -->
-            <div x-data="{ isRoleMenuOpen: false }">            
-              <li class="relative px-6 py-3">
-                {!! request()->routeIs('roles.create') ? '<span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>' : '' !!}
-                <button class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" x-on:click="isRoleMenuOpen = ! isRoleMenuOpen" aria-haspopup="true">
-                  <span class="inline-flex items-center">
-                    <x-icon name="user-circle" class="w-5 h-5" />
-                    <span class="ml-4">Roles</span>
-                  </span>
-                  <div x-show="isRoleMenuOpen">
-                    <x-icon name="chevron-up" class="w-5 h-5" />
-                  </div>
-                  <div x-show="!isRoleMenuOpen">
-                    <x-icon name="chevron-down" class="w-5 h-5" />
-                  </div>
-                </button>
-                <template x-if="isRoleMenuOpen"> 
-                  <ul
-                    x-transition:enter="transition-all ease-in-out duration-300"
-                    x-transition:enter-start="opacity-25 max-h-0"
-                    x-transition:enter-end="opacity-100 max-h-xl"
-                    x-transition:leave="transition-all ease-in-out duration-300"
-                    x-transition:leave-start="opacity-100 max-h-xl"
-                    x-transition:leave-end="opacity-0 max-h-0"
-                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900" aria-label="submenu" >
-                    <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                      <a class="w-full" href="{{route('roles.index')}}">View Roles</a>
-                    </li>
-                  </ul>
-                </template>
-              </li>
-            </div>
         <li class="relative px-6 py-3">
-            {!! request()->routeIs('forms') ? '<span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>' : '' !!}
-            <a data-turbolinks-action="replace" class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('forms')}}">
-                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
-                    </path>
-                </svg>
-                <span class="ml-4">Forms</span>
+            {!! request()->routeIs('roles.index') || request()->routeIs('role.create') || request()->routeIs('role.edit') || request()->routeIs('role.show') ? '<span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>' : '' !!}
+            <a data-turbolinks-action="replace" class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('roles.index')}}">
+                <x-icon name="user-circle" class="w-5 h-5" />
+                <span class="ml-4">Roles</span>
+            </a>
+        </li>
+        <li class="relative px-6 py-3">
+            {!! request()->routeIs('permissions.index') || request()->routeIs('permission.create') || request()->routeIs('permission.edit') || request()->routeIs('permission.show') ? '<span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>' : '' !!}
+            <a data-turbolinks-action="replace" class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="{{route('permissions.index')}}">
+                <x-icon name="lock-closed" class="w-5 h-5" />
+                <span class="ml-4">Permissions</span>
             </a>
         </li>
         <li class="relative px-6 py-3">

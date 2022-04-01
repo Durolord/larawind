@@ -1,16 +1,16 @@
 require('./bootstrap');
 
-import Alpine from 'alpinejs';
-import focus from '@alpinejs/focus'
-
-window.Alpine = Alpine;
-
-import './../../vendor/power-components/livewire-powergrid/dist/powergrid'
-
-
-Alpine.start();
+import Alpine from 'alpinejs'
+import FormsAlpinePlugin from '../../vendor/filament/forms/dist/module.esm'
+import Focus from '@alpinejs/focus'
  
-Alpine.plugin(focus);
+Alpine.plugin(FormsAlpinePlugin)
+Alpine.plugin(Focus)
+ 
+window.Alpine = Alpine
+ 
+Alpine.start();
+
 
 var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

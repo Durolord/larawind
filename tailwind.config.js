@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     presets: [
@@ -12,20 +13,19 @@ module.exports = {
         './vendor/wireui/wireui/ts/**/*.ts',
         './vendor/wireui/wireui/src/View/**/*.php',
         './app/Http/Livewire/**/*Table.php',
-      './vendor/power-components/livewire-powergrid/resources/views/**/*.php',
-      './vendor/power-components/livewire-powergrid/src/Themes/Tailwind.php'
     ],
     darkMode: 'class',
     theme: {
         extend: {
+            colors: {
+                danger: colors.rose,
+                success: colors.emerald,
+            },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
     },
 
-    plugins: [    require("@tailwindcss/forms")({
-      strategy: 'class',
-    }),
- require('@tailwindcss/typography')],
+    plugins: [require("@tailwindcss/forms"),require('@tailwindcss/typography')],
 };

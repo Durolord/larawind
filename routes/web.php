@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire;
+use Spatie\Permission\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,16 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
-    Route::view('roles', 'roles')->name('roles.index');
-    // Route::get('/roles/create', Livewire\CreateRoles::class)->name('roles.create');
+    // Permissions Routes
+        Route::view('permissions', 'permissions')->name('permissions.index');
+        Route::get('/permission/create', Livewire\CreatePermission::class)->name('permission.create');
+        Route::get('/permission/edit/{id}', Livewire\EditPermission::class)->name('permission.edit');
+    // Roles Routes
+        Route::get('/role/create', Livewire\CreateRoles::class)->name('role.create');
+        Route::view('roles', 'roles')->name('roles.index');
+        Route::get('/role/edit/{id}', Livewire\EditRole::class)->name('role.edit');
+        Route::get('{id}/role/', Livewire\DestroyRole::class)->name('role.destroy');
+        Route::get('/role/{id}', Livewire\ShowRole::class)->name('role.show');
     Route::view('forms', 'forms')->name('forms');
     Route::view('cards', 'cards')->name('cards');
     Route::view('charts', 'charts')->name('charts');
